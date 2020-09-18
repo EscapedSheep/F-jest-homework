@@ -6,10 +6,10 @@ jest.mock("../verify");
 jest.mock("axios");
 
 describe("register", () => {
-  test("should post user when validated", () => {
+  test("should post user when validated", async () => {
     // TODO 19: add test here
-    axios.post.mockResolvedValue({});
-    register("test", "test");
+    axios.post.mockResolvedValue(Promise.resolve({ data: "Test" }));
+    await expect(register("test", "test")).resolves.toEqual("Test");
     expect(axios.post).toHaveBeenCalled();
   });
 
