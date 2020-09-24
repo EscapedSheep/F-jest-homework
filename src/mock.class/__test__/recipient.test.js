@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-unresolved
-import Recipient from "../Recipient";
+import Recipient from "../recipient";
 
 describe("acceptInjection", () => {
   beforeEach(() => {
