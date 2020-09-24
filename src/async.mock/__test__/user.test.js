@@ -8,10 +8,11 @@ jest.mock("axios");
 describe("register", () => {
   test("should post user when validated", async () => {
     // TODO 19: add test here
-    axios.post.mockResolvedValue({});
+    axios.post.mockResolvedValue({ data: {} });
     register("test", "test");
     // TODO feedback: 因为是异步，所以需要用到async/await
-    await expect(axios.post).toHaveBeenCalled();
+    // expect(axios.post).toHaveBeenCalled();
+    await expect(register()).resolves.toEqual({});
   });
 
   test("should reject with Error when username is invalid", async () => {
